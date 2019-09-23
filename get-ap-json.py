@@ -6,7 +6,9 @@ req.add_header('Authorization', 'Basic YWRtaW46YWRtaW4=')
 req.add_header('Accept', 'application/vnd.yang.data+json')
 response = urlopen(req)
 response_string = response.read().decode('utf-8')
+#
 # print(response_string)
+#
 json_object = json.loads(response_string)
 print(json.dumps(json_object, sort_keys=True, indent=4))
 oper = json_object['configure-tacacs:configure-tacacs']
